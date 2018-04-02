@@ -185,3 +185,17 @@ GET /language/hotels/_search
 }
 ```
 
+The results show us that the analyzer is working correctly. It returns these terms:
+
+• q
+• qu
+• qui
+• quic
+• quick
+• b
+• br
+• bro
+• brow
+• brown
+
+

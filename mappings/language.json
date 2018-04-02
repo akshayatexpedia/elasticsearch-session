@@ -1,11 +1,57 @@
 {
 	"settings": {
-		"number_of_shards": 1
+		"number_of_shards": 1,
+		"analysis": {
+			"analyzer": {
+				"std_folded": {
+					"type": "custom",
+					"tokenizer": "standard",
+					"filter": [
+						"lowercase",
+						"asciifolding"
+					]
+				},
+				"synonym" : {
+					"tokenizer" : "whitespace",
+					"filter" : ["synonym"]
+				},
+				"autocomplete": {
+					"type": "custom",
+					"tokenizer": "standard",
+					"filter": [
+						"lowercase",
+						"autocomplete_filter"
+					]
+				}
+			},
+			"filter": {
+				"my_stop": {
+					"type":       "stop",
+					"stopwords": ["and", "is", "the"]
+				},
+				"my_stop_en": {
+					"type":       "stop",
+					"stopwords":  "_english_"
+				},
+				"synonym" : {
+					"type" : "synonym",
+					"synonyms" : ["pool,swimmingpool", "bar,alcohol"]
+				},
+				"autocomplete_filter": {
+					"type": "edge_ngram",
+					"min_gram": 1,
+					"max_gram": 20
+				}
+			}
+		}
 	},
 	"mappings": {
 		"hotels": {
 			"properties": {
-
+				"reviewText": {
+					"type": "text",
+					"analyzer": "autocomplete"
+				}
 			}
 		}
 	}
