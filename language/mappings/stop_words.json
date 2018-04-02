@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_stop": {
+          "type":       "stop",
+          "stopwords": ["and", "is", "the"]
+        }
+      }
+    }
+  }
+}
