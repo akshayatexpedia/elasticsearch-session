@@ -1,0 +1,35 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "filter": {
+        "geo_bounding_box": {
+          "location": {
+            "top_left": { "lat": 40.698, "lon": -73.998 },
+            "bottom_right": { "lat": 40.68657, "lon": -73.9830 }
+          }
+        }
+
+      }
+    }
+  },
+  "aggs": {
+    "per_ring": {
+      "geo_distance": {
+        "field": "location",
+        "unit": "km",
+        "origin": {
+          "lat": 40.6907,
+          "lon": -73.9916
+        },
+        "ranges": [
+          { "from": 0, "to": 1 },
+          { "from": 1, "to": 2 }
+        ]
+      }
+    }
+  }
+}

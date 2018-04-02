@@ -1,0 +1,26 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "filter": {
+        "geo_bounding_box": {
+          "location": {
+            "top_left": { "lat": 40.698, "lon": -73.998 },
+            "bottom_right": { "lat": 40.68657, "lon": -73.9830 }
+          }
+        }
+
+      }
+    }
+  },
+  "aggs": {
+    "map_zoom": {
+      "geo_bounds": {
+        "field": "location"
+      }
+    }
+  }
+}

@@ -18,26 +18,14 @@ A geo-point is a single latitude/longitude point on the Earth’s surface. Geo-p
 
 * Filtering by Geo-Point
 	* geo_bounding_box: Find geo-points that fall within the specified rectangle.
-
-		Code Example:
 		
-	* geo_distance: Find geo-points within the specified distance of a central point. The geo_distance filter draws a circle around the specified location and finds all documents that have a geo-point within that circle:
-
-		Code Example:
-	* geo_distance_range: Find geo-points within a specified minimum and maximum distance from a central point.
-
-		Code Example:
-		
+	* geo_distance: Find geo-points within the specified distance of a central point. The geo_distance filter draws a circle around the specified location and finds all documents that have a geo-point within that circle:		
 		
 ## Geo-aggregations
 
 * geo_distance: Groups documents into concentric circles around a central point.
-
-	Code Example:
 	
 * geo_bounds: Returns the lat/lon coordinates of a bounding box that would encompass all of the geo-points. This is useful for choosing the correct zoom level when displaying a map.
-
-	Code Example:
 	
 ## Geo-shapes
 
@@ -47,4 +35,4 @@ That is the extent of what you can do with geo-shapes: determine the relationshi
 * disjoint
 * within
 
-Geo-shapes cannot be used to caculate distance, cannot be used for sorting or scor‐ ing, and cannot be used in aggregations.
+Geo-shapes cannot be used to calculate distance, cannot be used for sorting or scoring, and cannot be used in aggregations.
