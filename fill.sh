@@ -34,6 +34,5 @@ done < "data-location-shape"
 for index in "search" "aggregations" "language" "geolocation" "geolocation-shape"
 do
     curl -XPOST "${ES_URL}/${index}/_refresh"
-    curl -XPOST "${ES_URL}/${index}/_optimize"
     curl -XPUT -H 'Content-Type: application/json' "${ES_URL}/${index}/_settings" -d "@${TMP_DATA_DIR}/payloads/start-refresh.json"
 done    
