@@ -1,0 +1,5 @@
+{
+  "tokenizer": "standard",
+  "filter":  [ "lowercase", "asciifolding" ],
+  "text":      "Is This déja vu?"
+}

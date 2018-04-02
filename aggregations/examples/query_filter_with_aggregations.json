@@ -1,0 +1,29 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "exists": {
+            "field": "reviewText"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "all": {
+      "nested": {
+        "path": "entities"
+      },
+      "aggs": {
+        "tags": {
+          "terms": {
+            "field": "entities.id.keyword",
+            "size": 1000000
+          }
+        }
+      }
+    }
+  }
+}

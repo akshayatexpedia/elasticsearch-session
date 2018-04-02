@@ -1,0 +1,17 @@
+{
+  "size": 0,
+  "aggs": {
+    "all": {
+      "nested": {
+        "path": "entities"
+      },
+      "aggs": {
+        "sentiment_score": {
+          "avg": {
+            "field": "entities.score"
+          }
+        }
+      }
+    }
+  }
+}

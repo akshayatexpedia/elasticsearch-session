@@ -1,0 +1,59 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "exists": {
+            "field": "reviewText"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "all": {
+      "nested": {
+        "path": "entities"
+      },
+      "aggs": {
+        "tags": {
+          "terms": {
+            "field": "entities.id.keyword",
+            "size": 1000000
+          },
+          "aggs": {
+            "positive": {
+              "filter": {
+                "bool": {
+                  "must": [
+                    {
+                      "range": {
+                        "entities.score": {
+                          "gt": 0.8
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "negative": {
+              "filter": {
+                "bool": {
+                  "must": {
+                    "range": {
+                      "entities.score": {
+                        "lt": 0.3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

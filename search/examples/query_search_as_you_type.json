@@ -1,0 +1,11 @@
+{
+  "query": {
+    "bool": {
+      "must": {
+        "match_phrase_prefix": {
+          "hotelId": "540"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "size": 0,
+  "aggs": {
+    "hotels": {
+      "terms": {
+        "field": "hotelId.keyword",
+        "size": 1000000
+      }
+    }
+  }
+}

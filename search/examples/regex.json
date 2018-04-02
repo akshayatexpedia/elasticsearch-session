@@ -1,0 +1,7 @@
+{
+  "query": {
+    "regexp": {
+      "hotelId": "54.*"
+    }
+  }
+}

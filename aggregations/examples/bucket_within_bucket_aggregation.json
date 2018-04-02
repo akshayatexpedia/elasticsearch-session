@@ -1,0 +1,18 @@
+{
+  "size": 0,
+  "aggs": {
+    "all": {
+      "nested": {
+        "path": "entities"
+      },
+      "aggs": {
+        "tags": {
+          "terms": {
+            "field": "entities.id.keyword",
+            "size": 1000000
+          }
+        }
+      }
+    }
+  }
+}

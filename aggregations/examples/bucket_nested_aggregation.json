@@ -1,0 +1,10 @@
+{
+  "size": 0,
+  "aggs": {
+    "tags": {
+      "nested": {
+        "path": "entities"
+      }
+    }
+  }
+}

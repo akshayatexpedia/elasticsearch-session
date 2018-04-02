@@ -1,0 +1,13 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "hotelId": "54938" } }
+      ],
+      "should": [
+        { "term": { "reviewId": "57436685" } },
+        { "term": { "hotelId": "54938" } }
+      ]
+    }
+  }
+}

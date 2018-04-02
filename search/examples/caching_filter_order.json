@@ -1,0 +1,15 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "reviewLastUpdatedDate": {
+              "gt": "now-1h"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
